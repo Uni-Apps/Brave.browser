@@ -1,0 +1,31 @@
+---
+# https://brave.com/linux/
+
+- name: alt install source
+  include_tasks: 'from:/{{ source }}/main.yml'
+  when: in == "native" and not repository
+
+- name: install from repository
+  - name: dependencies
+    ansible.builtin.apt:
+      pkg:
+      - curl
+
+  - name: Add repository
+    ansible.builtin.command: curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+    args:
+      creates: /etc/yum.repos.d/brave-browser.repo
+
+  - name: sources list
+    ansible.builtin.lineinfile:
+      path: /etc/apt/sources.list.d/brave-browser-release.list
+      line: "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"
+
+  - name: Install Brave browser
+    ansible.builtin.apt:
+      pkg:
+      - brave-browser
+      update_cache: true
+  become: true
+  when: repository
+
