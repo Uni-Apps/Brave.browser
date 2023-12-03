@@ -1,7 +1,6 @@
-- name: install Flutter Snap
+- name: install Brave Snap
   community.general.snap:
     name:
-      - flutter
+      - brave
     classic: true
   become: true
-  notify: initialize Flutter Snap
