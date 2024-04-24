@@ -1,6 +1,4 @@
-- hosts: localhost #, fedora, ubuntu
-  vars:
-    ansible_become_password: u
+- hosts: localhost
 
   roles:
   - Brave
