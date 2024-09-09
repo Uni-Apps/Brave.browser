@@ -1,0 +1,7 @@
+---
+roles:
+- name: UniInc.Brave-browser
+
+collections:
+  - name: kewlfft.aur
+#https://github.com/kewlfft/ansible-aur

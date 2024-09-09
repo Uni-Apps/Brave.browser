@@ -1,5 +1,0 @@
-in: "native"
-repository: true
-source: "download"
-
-ubuntu_default: snap
