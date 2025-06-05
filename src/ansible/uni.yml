@@ -2,5 +2,4 @@
 
   roles:
 #  - UniInc.Brave-browser
-#  - dev/ansible-role-Brave-browser
-  - dev/ansible-role-Yay-AUR-packager
+  - dev/ansible-role-Brave-browser
