@@ -1,6 +1,7 @@
 ---
 roles:
 - name: UniInc.Brave-browser
+- name: UniInc.Yay-AUR-packager
 
 collections:
   - name: kewlfft.aur
