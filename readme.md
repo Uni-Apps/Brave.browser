@@ -1,1 +1,1 @@
-# Brave.browser
+# Brave.Browser
